@@ -11,7 +11,7 @@ namespace WSServicioPichincha.Business.Services
         private readonly IRepository<Cuenta> cuentaRepository;
         private readonly IRepository<Cliente> clienteRepository;
         private readonly IRepository<Persona> personaRepository;
-        
+
         public MovimientosService(IRepository<Movimientos> movimientosRepository, IRepository<Cuenta> cuentaRepository,
             IRepository<Cliente> clienteRepository, IRepository<Persona> personaRepository)
         {
@@ -88,7 +88,22 @@ namespace WSServicioPichincha.Business.Services
             Cuenta cuenta = await cuentaRepository.GetById(entity.CuentaId);
             if (cuenta != null)
             {
-                entity.Saldo = cuenta.SaldoInicial + entity.Valor;
+                List<Movimientos> movimientos = movimientosRepository.GetAll().Result.Where(x => x.CuentaId == entity.CuentaId).ToList();
+                decimal movimientosSaldo = 0;
+                foreach (var item in movimientos)
+                {
+                    movimientosSaldo += item.Valor;
+                }
+
+                entity.Saldo = cuenta.SaldoInicial + movimientosSaldo + entity.Valor;
+                if (entity.Saldo <= 0)
+                {
+                    throw new PichinchaException($"Saldo no disponible, por favor valide.");
+                }
+                if (entity.Valor > 0)
+                    entity.Tipo = $"Deposito de {entity.Valor}";
+                else
+                    entity.Tipo = $"Retiro de {Math.Abs(entity.Valor)}";
                 return await movimientosRepository.Update(entity);
             }
             throw new PichinchaException($"La cuenta con el Id: {entity.CuentaId} que desea actualizar no existe, por favor valide.");

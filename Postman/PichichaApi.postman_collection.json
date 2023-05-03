@@ -225,7 +225,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"raw": "{\r\n  \"personaId\": 1,\r\n  \"nombre\": \"Jhon Cardenas Corredor test\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": 29,\r\n  \"identificacion\": \"1016083400\",\r\n  \"direccion\": \"carrera 104 # 24-32\",\r\n  \"telefono\": 322132\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -274,7 +274,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44305/api/Persona/1",
+							"raw": "https://localhost:44305/api/Persona/5",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -283,7 +283,7 @@
 							"path": [
 								"api",
 								"Persona",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -455,7 +455,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"raw": "{\r\n \"clienteId\": 1, \r\n  \"contraseña\": 32423,\r\n  \"estado\": true,\r\n  \"personaId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -592,7 +592,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44305/api/Cuenta/1",
+							"raw": "https://localhost:44305/api/Cuenta/2",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -601,7 +601,7 @@
 							"path": [
 								"api",
 								"Cuenta",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -822,7 +822,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44305/api/Movimientos/1",
+							"raw": "https://localhost:44305/api/Movimientos/15",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -831,7 +831,7 @@
 							"path": [
 								"api",
 								"Movimientos",
-								"1"
+								"15"
 							]
 						}
 					},
@@ -865,7 +865,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"fecha\": \"2023-05-03T04:05:10.291Z\",\r\n  \"tipo\": \"Retiro\",\r\n  \"valor\": -5000,\r\n  \"cuentaId\": 1\r\n}",
+							"raw": "{\r\n  \"fecha\": \"2023-05-03T04:05:10.291Z\",\r\n  \"valor\": -200,\r\n  \"cuentaId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -915,7 +915,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"raw": "{\r\n  \"movimientosId\": 23,\r\n  \"fecha\": \"2023-05-03\",\r\n  \"valor\": 20,\r\n  \"cuentaId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -974,6 +974,66 @@
 								"api",
 								"Movimientos",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Reportes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Reportes?fechaIncial=2022-01-01&fechaFinal=2024-12-12&ClienteId=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Reportes"
+							],
+							"query": [
+								{
+									"key": "fechaIncial",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "fechaFinal",
+									"value": "2024-12-12"
+								},
+								{
+									"key": "ClienteId",
+									"value": "2"
+								}
 							]
 						}
 					},

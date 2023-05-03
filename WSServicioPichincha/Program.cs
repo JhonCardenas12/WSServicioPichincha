@@ -56,17 +56,19 @@ builder.Services.AddDbContext<PichinchaContext>(options =>
     builder.Configuration.GetConnectionString("PichinchaConnection"));
 });
 
-builder.Services.AddTransient<IAuthorizationService, AuthorizationService>();
+builder.Services.AddScoped<IAuthorizationService, AuthorizationService>();
 
-builder.Services.AddTransient<IPersonaService, PersonaService>();
-builder.Services.AddTransient<IClienteService, ClienteService>();
-builder.Services.AddTransient<ICuentaService, CuentaService>();
-builder.Services.AddTransient<IMovimientosService, MovimientosService>();
+builder.Services.AddScoped<IPersonaService, PersonaService>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<ICuentaService, CuentaService>();
+builder.Services.AddScoped<IMovimientosService, MovimientosService>();
+builder.Services.AddScoped<IReportesService, ReportesService>();
 
-builder.Services.AddTransient<IRepository<Persona>, Repository<Persona>>();
-builder.Services.AddTransient<IRepository<Cliente>, Repository<Cliente>>();
-builder.Services.AddTransient<IRepository<Movimientos>, Repository<Movimientos>>();
-builder.Services.AddTransient<IRepository<Cuenta>, Repository<Cuenta>>();
+
+builder.Services.AddScoped<IRepository<Persona>, Repository<Persona>>();
+builder.Services.AddScoped<IRepository<Cliente>, Repository<Cliente>>();
+builder.Services.AddScoped<IRepository<Movimientos>, Repository<Movimientos>>();
+builder.Services.AddScoped<IRepository<Cuenta>, Repository<Cuenta>>();
 
 
 
