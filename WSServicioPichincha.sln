@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha", "WSServicioPichincha\WSServicioPichincha.csproj", "{18B66943-7634-4EFB-AA8F-A6FEBD2E70A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha", "WSServicioPichincha\WSServicioPichincha.csproj", "{18B66943-7634-4EFB-AA8F-A6FEBD2E70A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha.Security", "WSServicioPichincha.Security\WSServicioPichincha.Security.csproj", "{F99B4744-AE1E-4849-AECB-9C6FE9CB2D96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Security", "WSServicioPichincha.Security\WSServicioPichincha.Security.csproj", "{F99B4744-AE1E-4849-AECB-9C6FE9CB2D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha.Domain", "WSServicioPichincha.Domain\WSServicioPichincha.Domain.csproj", "{964AF43B-18D4-4A17-98F5-AE7D8ACCDFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Domain", "WSServicioPichincha.Domain\WSServicioPichincha.Domain.csproj", "{964AF43B-18D4-4A17-98F5-AE7D8ACCDFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha.Data", "WSServicioPichincha.Data\WSServicioPichincha.Data.csproj", "{E0095862-2556-4957-A30B-974F240DDC87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Data", "WSServicioPichincha.Data\WSServicioPichincha.Data.csproj", "{E0095862-2556-4957-A30B-974F240DDC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha.Business", "WSServicioPichincha.Business\WSServicioPichincha.Business.csproj", "{650B31CA-67C0-44C0-97C8-C50F847CB648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Business", "WSServicioPichincha.Business\WSServicioPichincha.Business.csproj", "{650B31CA-67C0-44C0-97C8-C50F847CB648}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

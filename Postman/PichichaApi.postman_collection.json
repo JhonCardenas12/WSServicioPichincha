@@ -1,0 +1,985 @@
+{
+	"info": {
+		"_postman_id": "a38803bf-9db1-45c8-a9ef-9e64f967d7c0",
+		"name": "PichichaApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Authentication/GetToken",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"token\", data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"{{user}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Authentication/GetToken",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Authentication",
+								"GetToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Persona",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Persona",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Persona/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Persona/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Persona",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Persona",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Jhon Cardenas\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": 27,\r\n  \"identificacion\": \"1016083400\",\r\n  \"direccion\": \"carrera 104 # 24-32\",\r\n  \"telefono\": 322132\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Persona",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Persona",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Persona",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Persona/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Persona/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Persona",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Cliente",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cliente/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cliente",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Jhon Cardenas\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": 27,\r\n  \"identificacion\": \"1016083400\",\r\n  \"direccion\": \"carrera 104 # 24-32\",\r\n  \"telefono\": 322132\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cliente",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cliente/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Cuenta",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cuenta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cuenta/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cuenta/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cuenta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cuenta",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Jhon Cardenas\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": 27,\r\n  \"identificacion\": \"1016083400\",\r\n  \"direccion\": \"carrera 104 # 24-32\",\r\n  \"telefono\": 322132\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cuenta",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Cuenta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Cuenta/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Cuenta/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Cuenta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "https://localhost:44305/api/Movimientos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Movimientos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Movimientos/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Movimientos/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Movimientos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fecha\": \"2023-05-03T04:05:10.291Z\",\r\n  \"tipo\": \"Retiro\",\r\n  \"valor\": -5000,\r\n  \"cuentaId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Movimientos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Movimientos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personaId\": 0,\r\n  \"nombre\": \"string\",\r\n  \"genero\": \"string\",\r\n  \"edad\": 0,\r\n  \"identificacion\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44305/api/Movimientos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44305/api/Movimientos/1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44305/api/Movimientos/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44305",
+							"path": [
+								"api",
+								"Movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
