@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSServicioPichincha.Business", "WSServicioPichincha.Business\WSServicioPichincha.Business.csproj", "{650B31CA-67C0-44C0-97C8-C50F847CB648}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServicioPichincha.Tests", "WSServicioPichincha.Tests\WSServicioPichincha.Tests.csproj", "{A35055E1-87E5-4D81-BFF3-95B452D65B43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{650B31CA-67C0-44C0-97C8-C50F847CB648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{650B31CA-67C0-44C0-97C8-C50F847CB648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{650B31CA-67C0-44C0-97C8-C50F847CB648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35055E1-87E5-4D81-BFF3-95B452D65B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35055E1-87E5-4D81-BFF3-95B452D65B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35055E1-87E5-4D81-BFF3-95B452D65B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35055E1-87E5-4D81-BFF3-95B452D65B43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
